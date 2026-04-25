@@ -45,21 +45,21 @@ All tests use **Swift Testing** (`import Testing`, `@Test`, `#expect`). There is
 ┌─────────────────────────────────────────────────────────────┐
 │                         UI Layer                            │
 │                                                             │
-│   DashboardView  ◄──────────►  DashboardViewModel          │
-│   (SwiftUI)                    (@Observable, @MainActor)   │
+│   DashboardView  ◄──────────►  DashboardViewModel           │
+│   (SwiftUI)                    (@Observable, @MainActor)    │
 └──────────────────────────┬──────────────────────────────────┘
                            │ calls
 ┌──────────────────────────▼──────────────────────────────────┐
 │                      Service Layer                          │
 │                                                             │
-│   AccelerometerService     StorageManager    CSVExportService│
+│   AccelerometerService    StorageManager   CSVExportService │
 │   (actor)                  (actor)           (struct)       │
 └────────────┬───────────────────┬────────────────────────────┘
              │                   │
 ┌────────────▼───────────────────▼────────────────────────────┐
 │                   Platform Layer                            │
 │                                                             │
-│   CMMotionManager    NSPersistentContainer    BGTaskScheduler│
+│   CMMotionManager   NSPersistentContainer   BGTaskScheduler │
 └─────────────────────────────────────────────────────────────┘
 
 Background path:
